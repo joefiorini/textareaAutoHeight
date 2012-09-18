@@ -54,9 +54,21 @@ $.fn.textareaAutoHeight = function(){
   $elm.keypress(function(e){
     var charPressed = String.fromCharCode(e.which),
         currentValue = $(this).val(),
-        newValue = currentValue + charPressed,
-        currentHeight = $clonedField[0].scrollHeight;
+        currentHeight = $clonedField[0].scrollHeight,
+        selection = $(this).getSelection();
+
+    if(e.which == 13){
+      charPressed = "\n";
+    }
+
+    function stringWithStringInsertedAt(index, original, str){
+      var firstPart = original.substr(0, index),
+          secondPart = original.substr(index, original.length);
+
+      return firstPart + str + secondPart;
+    }
     
+    newValue = stringWithStringInsertedAt(selection.start, currentValue, charPressed);
     $clonedField.val(newValue);
     
     var newHeight = $clonedField[0].scrollHeight;
@@ -67,6 +79,19 @@ $.fn.textareaAutoHeight = function(){
     
     $(this).val(newValue);
     
+    var selectionStart = selection.start,
+        selectionEnd = selection.end;
+
+    if(selectionStart != selectionEnd){
+      selectionEnd = selectionStart;
+    } else {
+      selectionStart += 1;
+      selectionEnd += 1;
+    }
+
+    $(this).prop("selectionStart", selectionStart);
+    $(this).prop("selectionEnd", selectionEnd);
+
     return false;
   });
 };
