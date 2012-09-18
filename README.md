@@ -42,16 +42,17 @@ It really couldn't be any simpler.
 
 You might be asking yourself how you can contribute to such an awesome project. Look no further, here's your answer:
 
-1. Open an issue demonstrating the problem with a clear use case (what did you do, what did you expect to happen, what actually happened?) - Gist, [CodePen](http://www.codepen.io) or [jsfiddle](http://www.jsfiddle.net) happily accepted
+1. Open an issue demonstrating the problem with a clear use case (what did you do, what did you expect to happen, what actually happened?) – Gist, [CodePen](http://www.codepen.io) or [jsfiddle](http://www.jsfiddle.net) happily accepted
 2. Fix the issue you found and open a pull request
 3. Describe your fix and why you made any changes unrelated to the fix
 
 ### Known Issues
 
-If you __really__ want to contribute, here's a good place to start:
+If you _really_ want to contribute, here's a good place to start:
 
-1. Caret positioning is probably messed up in IE - I did my best to maintain cross-browser support but haven't had the chance to check in IE yet. If anyone is up to the challenge, please try inserting/deleting text at arbitrary positions throughout the textarea and see if it works or breaks.
-2. Performance? It stills feels a tiny bit sluggish.
+1. Caret positioning is probably messed up in IE – I did my best to maintain cross-browser support but haven't had the chance to check in IE yet. If anyone is up to the challenge, please try inserting/deleting text at arbitrary positions throughout the textarea and see if it works or breaks.
+2. It doesn't work when pasting text – obviously this needs to be fixed, and soon; if someone else can get to it before I can, great! If not, I'll get to it eventually.
+3. Performance? It stills feels a tiny bit sluggish.
 
 
 ### Double Plus Bonus
